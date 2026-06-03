@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Merci — KIA × FIFA World Cup 2026</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    @font-face {
+      font-family: 'KIA';
+      src: url('/fonts/KiaSignature-Light.woff2') format('woff2'),
+           url('/fonts/KiaSignatureOTFLight.otf') format('opentype');
+      font-weight: 300;
+    }
+    @font-face {
+      font-family: 'KIA';
+      src: url('/fonts/KiaSignature-Regular.woff2') format('woff2'),
+           url('/fonts/KiaSignatureOTFRegular.otf') format('opentype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'KIA';
+      src: url('/fonts/KiaSignature-Bold.woff2') format('woff2'),
+           url('/fonts/KiaSignatureOTFBold.otf') format('opentype');
+      font-weight: 700;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      background: #05141F;
+      color: #fff;
+    }
+
+    /* ── NAV ── */
+    .nav { background: #05141F; width: 100%; }
+    .nav__inner {
+      padding: 18px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav__inner img { width: 234px; height: auto; }
+
+    /* ── HERO ── */
+    .hero-wrap {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    .hero {
+      width: 100%;
+      height: 600px;
+      background: url('/img/confirmpage.png') center / cover no-repeat;
+    }
+
+    /* ── MAIN ── */
+    .main {
+      background: #05141F;
+      padding-bottom: 80px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 100px;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* ── CARD ── */
+    .card {
+      width: 100%;
+      max-width: 1024px;
+      border: 1px solid #C6A84B;
+      padding: 50px 40px;
+      margin-top: -60px;
+      position: relative;
+      z-index: 10;
+      background: #05141F;
+      text-align: center;
+    }
+
+    .card__title {
+      font-family: 'KIA', Arial, sans-serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 50px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .card__sub {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: #fff;
+      line-height: 24px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .card__highlight {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 24px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    /* ── STEPS ── */
+    .steps {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 16px;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .step:nth-child(2) {
+      border: 1px solid transparent;
+      background:
+        linear-gradient(#05141F, #05141F) padding-box,
+        linear-gradient(197deg, #FFB917 1.39%, #FFEFC6 37.9%, #FFC720 72.5%, #FFF4D3 100%) border-box;
+    }
+
+
+    .step__icon {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .step__title {
+      font-family: 'KIA', Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      line-height: normal;
+      text-align: center; 
+    }
+
+    .step__desc {
+      font-family: 'KIA', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: #fff;
+      line-height: 19px;
+      text-align: center;
+    }
+
+    /* ── BUTTON ── */
+    .btn-confirm {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #fff;
+      color: #05141F;
+      font-family: 'KIA', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-confirm:hover { opacity: 0.85; }
+    .btn-confirm svg { flex-shrink: 0; }
+
+    /* ── FOOTER ── */
+    .footer { background: #05141F; padding: 40px 0 0; }
+    .footer__mentions {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 100px 24px;
+    }
+    .footer__mention-line {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      color: #fff;
+      line-height: 1.6;
+      margin: 0 0 8px;
+    }
+    .footer__mention-line:last-child { margin-bottom: 0; }
+    .footer__energy {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 100px;
+      margin-bottom: 32px;
+    }
+    .footer__score { width: 150px; height: auto; }
+    .footer__bottom {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 20px 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer__logo img { width: 88px; height: auto; }
+    .footer__links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .footer__links a { font-size: 11px; color: #fff; text-decoration: none; transition: opacity 0.2s; }
+    .footer__links a:hover { opacity: 0.75; }
+    .footer__links span { color: #fff; font-size: 11px; }
+    .footer__socials { display: flex; align-items: center; gap: 10px; }
+    .footer__socials a { display: flex; align-items: center; transition: opacity 0.2s; }
+    .footer__socials a:hover { opacity: 0.75; }
+    .footer__socials img { width: 28px; height: 28px; object-fit: contain; }
+
+    @media (max-width: 768px) {
+      .nav__inner { padding: 14px 20px; }
+      .nav__inner img { width: 131px; }
+      .hero { height: 240px; }
+      .main { padding-bottom: 60px; }
+      .container { padding: 0 20px; }
+      .card {
+        padding: 32px 20px 28px;
+        margin-top: -40px;
+      }
+      .card__title { font-size: 22px; }
+      .steps { flex-direction: column; gap: 14px; }
+      .footer__bottom { flex-direction: column; align-items: center; gap: 16px; }
+      .footer__links { justify-content: center; }
+      .footer__mentions { padding: 0 20px 24px; }
+      .footer__energy { padding: 0 20px; }
+      .footer__bottom { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="/"><img src="/img/header-logo.png" alt="KIA — Partenaire Officiel FIFA" /></a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <div class="hero"></div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="container">
+    <div class="card">
+
+      <h1 class="card__title">
+        🎉 Bravo <span id="js-prenom"></span>,<br>
+        votre participation est enregistrée !
+      </h1>
+
+      <p class="card__sub">
+        Vous êtes inscrit·e au pour tenter de remporter des goodies Kia × FIFA et des entrées pour le Mondial de l'Auto.
+      </p>
+
+      <p class="card__highlight">
+        Allez encore plus loin pour tenter de remporter le Kia EV2 ou un séjour à Chamonix : venez essayer l'un de nos véhicules Kia en concession !
+      </p>
+
+      <!-- 3 étapes -->
+      <div class="steps">
+        <div class="step">
+          <img class="step__icon" src="/img/pictoconfirm1.png" alt="" />
+          <p class="step__title">Vous êtes inscrit<br>au tirage au sort</p>
+          <p class="step__desc">Vous tentez de remporter l'un de nos lots du jeu Kia × FIFA Coupe du Monde™.</p>
+        </div>
+        <div class="step">
+          <img class="step__icon" src="/img/pictoconfirm2.png" alt="" />
+          <p class="step__title">Rendez-vous en concession</p>
+          <p class="step__desc">Essayez un véhicule Kia jusqu'au 18 juillet pour tenter de gagner le Kia EV2 ou un week-end à Chamonix.</p>
+        </div>
+        <div class="step">
+          <img class="step__icon" src="/img/pictoconfirm3.png" alt="" />
+          <p class="step__title">Tirage au sort</p>
+          <p class="step__desc">Les gagnants seront contactés par Kia France par téléphone et/ou par mail entre le 22 et 31 juillet.​</p>
+        </div>
+      </div>
+
+      <a href="https://www.kia.com/fr/trouver-un-concessionnaire/" target="_blank" class="btn-confirm">
+        Je demande mon essai
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M12.9333 7.70667C13.0933 7.86667 13.0933 8.10667 12.9333 8.26667L5.22663 16H2.95996L10.96 8L2.95996 0H5.22663L12.9333 7.70667Z" fill="#05141F"/>
+        </svg>
+      </a>
+
+    </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__bottom">
+      <div class="footer__logo">
+        <a href="/"><img src="/img/logo-kia.png" alt="KIA" /></a>
+      </div>
+      <div class="footer__links">
+        <a href="/mentions-legales.html" target="_blank">Mentions légales</a>
+        <span>|</span>
+        <a href="/reglement.html" target="_blank">Règlement</a>
+        <span>|</span>
+        <a href="https://www.kia.com/fr/cookies/" target="_blank">Gestion des cookies</a>
+        <span>|</span>
+        <a href="https://www.kia.com/fr/" target="_blank">Kia France</a>
+        <span>|</span>
+        <a href="https://www.kia.com/fr/nous-contacter/contact/#/" target="_blank">Nous contacter</a>
+      </div>
+      <div class="footer__socials">
+        <a href="https://www.facebook.com/kiafrance/" target="_blank"><img src="/img/fb.png" alt="Facebook" /></a>
+        <a href="https://www.instagram.com/kiafrance/" target="_blank"><img src="/img/insta.png" alt="Instagram" /></a>
+        <a href="https://twitter.com/kiafrance" target="_blank"><img src="/img/x.png" alt="X" /></a>
+        <a href="https://www.youtube.com/user/KIAFrance" target="_blank"><img src="/img/yt.png" alt="YouTube" /></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search)
+    const prenom = params.get('prenom') || ''
+    const el = document.getElementById('js-prenom')
+    if (el && prenom) el.textContent = prenom
+  </script>
+
+</body>
+</html>
